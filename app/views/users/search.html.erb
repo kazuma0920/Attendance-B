@@ -1,5 +1,5 @@
 <% provide(:title, 'All Users') %>
-<h1>全てのユーザー</h1>
+<h1>検索結果</h1>
 
 <div class="search_form">
 <p>ユーザー名検索</p>
@@ -10,14 +10,13 @@
 </div>
 
 <div class="col-md-10 col-md-offset-1">
-  <%= will_paginate %>
+ <%= will_paginate %>
   <table class="table table-condensed table-hover" id="table-users">
-
     <% @users.each do |user| %>
       <tr>
         <td>
           <% if current_user.admin? %>
-            <%= link_to user.name, user_path(user.id) %>
+            <%= link_to user.name, user %>
             <%= link_to "|基本情報編集", edit_basic_info_user_path(user), remote: true%>
           <% else %>
             <%= user.name %>
