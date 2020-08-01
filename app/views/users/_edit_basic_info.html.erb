@@ -1,9 +1,6 @@
 <% provide(:class_text, 'basic-info') %>
 <% provide(:button_text, '更新') %>
 
-  <% provide(:class_text, 'basic-info') %>
-<% provide(:button_text, '更新') %>
-
 <div class="modal-dialog modal-lg modal-dialog-center">
   <div class="modal-content">
     <div class="modal-header">
@@ -23,6 +20,12 @@
 
             <%= f.label :department, class: "label-#{yield(:class_text)}" %>
             <%= f.text_field :department, class: "form-control" %>
+            
+            <%= f.label :card, class: "label-#{yield(:class_text)}" %>
+            <%= f.text_field :card, class: "form-control" %>
+            
+            <%= f.label :number, class: "label-#{yield(:class_text)}" %>
+            <%= f.text_field :number, class: "form-control" %>
 
             <%= f.label :basic_time, class: "label-#{yield(:class_text)}" %>
             <%= f.time_field :basic_time, class: "form-control" %>

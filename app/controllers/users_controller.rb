@@ -67,7 +67,9 @@ class UsersController < ApplicationController
     redirect_to users_url
   end
   
-
+  def attendance_user
+    @users = User.includes(:attendances).where("attendances.started_at", Date.today).references(:attendances)
+  end
   
   private
 
@@ -76,8 +78,6 @@ class UsersController < ApplicationController
     end
     
     def basic_info_params
-      params.require(:user).permit(:department,:basic_time,:work_time)
+      params.require(:user).permit(:department,:basic_time,:work_time,:card, :number)
     end
-    
-
 end
